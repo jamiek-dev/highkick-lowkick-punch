@@ -1,0 +1,113 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*=======================================================================================================================================================================
+		Site Info
+=========================================================================================================================================================================
+
+	Site: High Kick, Low Kick, Punch
+	WD: Jamie Keomanivong
+	
+	Last Modified: WD  --  MM/DD/YY  --  modifications
+
+=========================================================================================================================================================================
+		Stylesheet Info
+=========================================================================================================================================================================
+
+	Index:
+	1.0 - Homepage Styles
+			- In game styles
+			- Game instructions
+			- Notification box
+			
+=======================================================================================================================================================================*/
+
+
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//////////////////////     1.0 - General Styles
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/ 
+	html {overflow:-moz-scrollbars-vertical; overflow-y: scroll;}
+	body {background:url(../images/level.png) no-repeat center top; font:normal 16px/24px 'Rokkitt', serif; color:#333;}
+	#container {width:901px; margin:0 auto; position:relative; z-index:10;}
+	#container.home-container {text-align:center;}
+	#hit-notifier {position:absolute; left:0; top:0; width:100%; height:100%; background:#EE3B3B; z-index:-1; display:none;}
+	.red-text {color:#EE3B3B;}
+	
+	/* slightly enhanced, universal clearfix hack */
+	.clearfix:after {
+			 visibility: hidden;
+			 display: block;
+			 font-size: 0;
+			 content: " ";
+			 clear: both;
+			 height: 0;
+			 }
+	.clearfix { display: inline-block; }
+	.clear-float {clear:both;}
+	/* start commented backslash hack \*/
+	* html .clearfix { height: 1%; }
+	.clearfix { display: block; }
+	/* close commented backslash hack */
+	*, *:before, *:after {-moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;}
+
+/* Menu styles
+----------------------------------------------------------------------*/	
+	select {font:normal 20px/30px 'Rokkitt', serif; color:#333; padding:5px; margin:0 10px 20px;}
+		option {margin-bottom:5px;}
+		#submit {border:none; background:#57B5F9; color:#fff; font:normal 23px/34px 'Rokkitt', serif; padding:5px 20px; cursor:pointer;}
+		#submit:hover {background:#48A6CB;}
+
+/* In game styles
+----------------------------------------------------------------------*/
+
+	/* Players */
+	.player-box {width:450px; height:450px; float:left; position:relative;}
+		.player-box input {display:block; border:1px solid #ccc; padding:10px;}
+	.player {position:absolute; height:450px; width:300px; top:25px;}
+	.player img {position:relative;}
+	.player p {font-size:24px; text-align:center; width:90px; margin:175px auto 0;}
+	
+	/* Player 1 */
+	#player-1 {z-index:10;}
+		#player1-meter {float:left;}
+			#player1-meter.life-meter div {float:left;}
+				#player1-meter.life-meter p span {margin-left:10px;}
+		#p1-actions {left:0; top:100px; position:absolute; font-size:20px;}
+		#player-1 .player {right:25px;}
+			#player-1 .player img {left:100px;}
+	
+	/* Player 2 */
+	#player-2 {z-index:5;}
+		#player2-meter {float:right; text-align:right;}
+			#player2-meter.life-meter div {float:right;}
+				#player2-meter.life-meter p span {margin-right:10px;}
+				#player2-meter .health-bar span {float:right;}
+		#p2-actions {right:0; top:100px; position:absolute; text-align:right; font-size:20px;}
+		#player-2 .player {left:25px;}
+			#player-2 .player img {right:100px;}
+	
+	/* Health bar and Actions notifier */
+	.life-meter {width:400px; height:29px; padding:1px; border:1px solid #efefef;}
+		.health-bar span {display:block; width:200px; padding:1px 10px;}
+		.life-meter div:first-child {background:#81E392; width:100%; height:25px; font-size:20px; color:#333;}
+		.life-meter p {font-size:20px; margin-top:40px; color:#333;}
+			.life-meter p span {width:10px; height:10px; background:#57B5F9; display:inline-block;}
+	#actions-box {position:absolute; left:46%; font-size:26px; text-align:center;}
+		#action-count {margin-top:15px; font-size:40px;}
+	
+/* Notification box
+----------------------------------------------------------------------*/
+	#notification-box {height:220px; text-align:center; padding-top:70px;}
+		#notification-box p {font-size:50px; display:none; color:#57B5F9;}
+			#notification-box p span {font-size:80px; display:block; margin-top:40px;}
+		
+/* Game instructions
+----------------------------------------------------------------------*/
+	.desc {position:absolute;}
+	.desc:first-child {left:370px; top:60px;}
+	.desc:nth-child(2) {top:0; right:-130px;}
+	.desc:nth-child(3) {top:465px; left:-140px;}
+	.desc:nth-child(4) {top:200px; right:-130px;}
+	.desc:nth-child(5) {top:40px; left:-55px;}
+	.desc:nth-child(6), .desc:nth-child(7) {top:670px; right:0; cursor:pointer; z-index:200;}
+	.desc:nth-child(6) {display:none;}
